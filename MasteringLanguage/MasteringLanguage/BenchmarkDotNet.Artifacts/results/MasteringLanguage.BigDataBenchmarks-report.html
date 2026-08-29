@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>MasteringLanguage.BigDataBenchmarks-20260829-121149</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 11 (10.0.26200.9168/25H2/2025Update/HudsonValley2)
+12th Gen Intel Core i5-12500H 2.50GHz, 1 CPU, 16 logical and 12 physical cores
+.NET SDK 10.0.400
+  [Host]     : .NET 10.0.11 (10.0.11, 10.0.1126.37416), X64 RyuJIT x86-64-v3
+  Job-NTRUNJ : .NET 10.0.11 (10.0.11, 10.0.1126.37416), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>IterationCount=5  WarmupCount=3  
+</code></pre>
+
+<table>
+<thead><tr><th>Method                   </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Gen0</th><th>Gen1</th><th>Gen2</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>CsvParsing_String_10K</td><td>3.288 &mu;s</td><td>0.2174 &mu;s</td><td>0.0565 &mu;s</td><td>1.00</td><td>0.02</td><td>1.3580</td><td>-</td><td>-</td><td>12800 B</td><td>1.00</td>
+</tr><tr><td>CsvParsing_Span_10K</td><td>2.661 &mu;s</td><td>0.0849 &mu;s</td><td>0.0220 &mu;s</td><td>0.81</td><td>0.01</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>CsvParsing_String_100K</td><td>30.649 &mu;s</td><td>3.4333 &mu;s</td><td>0.8916 &mu;s</td><td>9.32</td><td>0.29</td><td>10.8643</td><td>-</td><td>-</td><td>102400 B</td><td>8.00</td>
+</tr><tr><td>CsvParsing_Span_100K</td><td>25.672 &mu;s</td><td>1.4535 &mu;s</td><td>0.3775 &mu;s</td><td>7.81</td><td>0.16</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>CsvParsing_String_1M</td><td>306.448 &mu;s</td><td>36.5749 &mu;s</td><td>9.4984 &mu;s</td><td>93.22</td><td>3.02</td><td>105.9570</td><td>-</td><td>-</td><td>1002400 B</td><td>78.31</td>
+</tr><tr><td>CsvParsing_Span_1M</td><td>237.795 &mu;s</td><td>3.7525 &mu;s</td><td>0.5807 &mu;s</td><td>72.34</td><td>1.15</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>ArrayProcessing_NewArray_10K</td><td>6.661 &mu;s</td><td>0.5142 &mu;s</td><td>0.1335 &mu;s</td><td>2.03</td><td>0.05</td><td>4.2343</td><td>-</td><td>-</td><td>40024 B</td><td>3.13</td>
+</tr><tr><td>ArrayProcessing_Stackalloc_10K</td><td>5.275 &mu;s</td><td>0.1109 &mu;s</td><td>0.0288 &mu;s</td><td>1.60</td><td>0.03</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>ArrayProcessing_NewArray_100K</td><td>121.437 &mu;s</td><td>1.6368 &mu;s</td><td>0.4251 &mu;s</td><td>36.94</td><td>0.59</td><td>56.6406</td><td>56.6406</td><td>56.6406</td><td>400043 B</td><td>31.25</td>
+</tr><tr><td>ArrayProcessing_Stackalloc_100K</td><td>56.878 &mu;s</td><td>0.8220 &mu;s</td><td>0.2135 &mu;s</td><td>17.30</td><td>0.28</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>ArraySlicing_Copy_100K</td><td>43.201 &mu;s</td><td>2.5490 &mu;s</td><td>0.6620 &mu;s</td><td>13.14</td><td>0.28</td><td>42.7246</td><td>-</td><td>-</td><td>402400 B</td><td>31.44</td>
+</tr><tr><td>ArraySlicing_Span_100K</td><td>24.103 &mu;s</td><td>0.2700 &mu;s</td><td>0.0701 &mu;s</td><td>7.33</td><td>0.12</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.00</td>
+</tr><tr><td>StringSplitting_Split_10K</td><td>7.548 &mu;s</td><td>0.3232 &mu;s</td><td>0.0839 &mu;s</td><td>2.30</td><td>0.04</td><td>5.0964</td><td>0.7248</td><td>-</td><td>48032 B</td><td>3.75</td>
+</tr><tr><td>StringSplitting_Span_10K</td><td>3.674 &mu;s</td><td>0.0920 &mu;s</td><td>0.0142 &mu;s</td><td>1.12</td><td>0.02</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.00</td>
+</tr></tbody></table>
+</body>
+</html>
