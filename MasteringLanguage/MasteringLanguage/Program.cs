@@ -1,6 +1,11 @@
 ﻿using MasteringLanguage;
 using System;
 
+var a = new PointA(1, 2);
+// a.x                                        // ❌ n'existe pas
+var b = new PointB(1, 2);
+Console.WriteLine(b.X);
+
 // Pour tester la correction du ref struct
 // TestStruct.Test();
 
@@ -21,3 +26,7 @@ Console.WriteLine("   - String.Split vs Span slicing\n");
 Console.WriteLine("⏱️  Durée estimée : ~2-3 minutes\n");
 
 BigDataBenchmarkRunner.RunBigDataBenchmarks();
+
+// Déclarations de types (DOIVENT être après les top-level statements)
+public struct PointA(int x, int y);          // paramètres capturés, RIEN d'exposé
+public record struct PointB(int X, int Y);
