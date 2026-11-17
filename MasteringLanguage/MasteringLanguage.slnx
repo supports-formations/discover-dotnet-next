@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/async-await/">
+    <Project Path="DiscoverAsyncAwait/DiscoverAsyncAwait.csproj" Id="e22643b6-4713-470e-8549-8b49c1896965" />
+  </Folder>
+  <Project Path="CollectionEtSpread/CollectionEtSpread.csproj" Id="78c1dbd5-fcb5-43c6-ad6c-8138a248e63a" />
   <Project Path="FinalProject/FinalProject.csproj" Id="bcdf6d6e-8c81-4569-a770-2b106be8e2be" />
   <Project Path="MasteringLanguage/MasteringLanguage.csproj" />
 </Solution>
