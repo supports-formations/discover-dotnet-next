@@ -1,0 +1,3 @@
+- generic [active] [ref=e1]:
+  - heading "Star Wars Trade — Modèle conceptuel de données (15 tables)" [level=1] [ref=e2]
+  - paragraph [ref=e3]: 1 = exactement un · 0..1 = zéro ou un · 1..N = un à plusieurs · 0..N = zéro à plusieurs — (CASCADE) = suppression en cascade
